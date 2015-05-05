@@ -23,6 +23,13 @@
 			padding:16px;
 			margin:16px;
 		}
+		h3 {
+			height: 50px; 
+			width: 400px; 
+			background-color: blue; 
+			color: white; border: 
+			1px solid black;
+		}
 	</style>
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 <script type="text/javascript">
@@ -65,6 +72,17 @@
 			<h2>A heading</p>
 			<img src="somepic.jpg" alt="A picture">
 			<h1>A bigger heading</h1>
+		</article>
+		
+		<article>
+			<h3>Item 1</h3>
+			<p>Item 1 content</p>
+			<h3>Item 2</h3>
+			<p>Item 2 content</p>
+			<h3>Item 3</h3>
+			<p>Item 3 content</p>
+			<h3>Item 4</h3>
+			<p>Item 4 content</p>
 		</article>
 		
         <article>
@@ -123,6 +141,20 @@
 	$('article').find('a').text('Функция FIND').css('color','orange');
 </script>
 
+<script type="text/javascript">
+	var headings = $('h3');
+	var paras = $('p');
+	
+	$('article h3').siblings('p').hide(); //скроем (hide) все параграфы (помним функцию siblings)
+	
+	
+	headings.click(function() {
+		var cur = $(this); //сохраняем элемент, на который мы нажали (this) для более простой передачи
+		cur.siblings('p').slideUp(); //скроем (hide) все параграфы (помним функцию siblings)
+		cur.next('p').slideDown(); //показывает следующий после активного заголовка параграф. 
+		// делаем открытие и скрытие параграфа более мягким : заменяем hide() на slideUp() и show() на slideDown():
+    });
+</script>
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 </html>
 
