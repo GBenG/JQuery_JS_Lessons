@@ -19,12 +19,17 @@
 			padding: 10px;
 			font-size: 20px;
 		}
+		.list {
+			padding:16px;
+			margin:16px;
+		}
 	</style>
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	
 </head>
 <body>
     <div id="content" class="wrapper box">
+	
         <hgroup>
             <h1>Пример HTML5</h1>
             <h2>Простая, правильная страница, и вполне релевантная вёрстка</h2>
@@ -37,6 +42,16 @@
 		<div>
 			<h2>A header with <a href="http://www.1stwebdesigner.com">a link</a> inside.
 			<p>A paragraph in the div</p>
+		</div>
+		
+		<div class="list">
+			<ul>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+				<li>Item 4</li>
+				<li>Item 5</li>
+			</ul>
 		</div>
 		
         <article>
@@ -82,9 +97,15 @@
 			fontSize: "50px"
 		}, 1000);
 </script>
+
 <script type="text/javascript">
 	$('h2').children('a').text('Э... ссылка').css('color','blue');
 </script>
+
+<script type="text/javascript">
+	$('ul').children('li').eq(2).css('color','yellow'); //выбираем item 3 (т.к. отсчёт, мы помним, начинается с 0)
+</script>
+
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 </html>
 
