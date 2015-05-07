@@ -24,7 +24,7 @@
     <div id="content" class="wrapper box">
 	
         <hgroup>
-            <h1>Пример HTML5</h1>
+            <h1>Пример HTML5 + JQuery</h1>
             <h2>Простая, правильная страница, и вполне релевантная вёрстка</h2>
         </hgroup>
 		
@@ -122,6 +122,58 @@
 	
 <!-- Функция closest() -->
 	$($('#nav li').closest('li').get(1)).css('color', '#a6f');
+</script>
+
+<!-- //////////////////////////////////////////////////////////////////// -->
+<!-- Книжка -->
+
+<script type="text/javascript">
+// сворачиваем все обьекты 'article' полностью
+$('article').hide(5000); 
+</script>
+
+<script type="text/javascript">
+// разворачиваем все обьекты 'article' полностью
+$('article').show(5000); 
+</script>
+
+<!-- //////////////////////////////////////////////////////////////////// -->
+
+<script type="text/javascript">
+// сворачиваем все обьекты 'article' по вертикали
+$('article').slideUp(5000); 
+</script>
+
+<script type="text/javascript">
+// разворачиваем все обьекты 'article' по вертикали
+$('article').slideDown(5000); 
+</script>
+
+<!-- //////////////////////////////////////////////////////////////////// -->
+
+<script type="text/javascript">
+// деляем все обьекты 'article' прозрачными 
+$('article').fadeOut(3000); 
+</script>
+
+<script type="text/javascript">
+// возвращаем все назад
+$('article').fadeIn(3000); 
+</script>
+
+<!-- //////////////////////////////////////////////////////////////////// -->
+
+<script type="text/javascript">
+// анимация с вызовом callback функций
+$('p').animate({ 
+    'font-size':'24px'
+},4000,function(){
+	$('p').animate({ 
+    'font-size':'12px'
+	},4000,function(){ 
+alert("Печеньки захвачены мой генерал!"); 
+	});  
+});  
 </script>
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 </html>
