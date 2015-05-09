@@ -49,6 +49,24 @@
 			</div>
 		</div>
 <!-- //////////////////////////////////////////////////////////////////// -->	
+
+		<form name="test" method="post" action="input1.php" class="code">
+			<p><b>Ваше имя:</b><br>
+				<input name="nick" type="text" size="40">
+			</p>
+			<p><b>Каким браузером в основном пользуетесь:</b><Br>
+				<input type="radio" name="browser" value="ie"> Internet Explorer<Br>
+				<input type="radio" name="browser" value="opera"> Opera<Br>
+				<input type="radio" name="browser" value="firefox"> Firefox<Br>
+			</p>
+			<p>Комментарий<Br>
+				<textarea name="comment" cols="40" rows="3"></textarea></p>
+			<p><input type="submit" value="Отправить">
+				<input type="reset" value="Очистить">
+			</p>
+		</form>
+
+<!-- //////////////////////////////////////////////////////////////////// -->	
         <article>
             <h2>Article Title</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rutrum,
@@ -110,52 +128,12 @@
 <!-- //////////////////////////////////////////////////////////////////// -->
 <!--
 <script type="text/javascript">
-// Выделяться родительский и дочерний спаны, как дети .block и родительского спана соответственно.
-$('span:first-child').animate({ 
-    'font-size':'24px'
+// выделиться кнопка ‘отправить’, т.к. только она является submit
+$(':submit').animate({ 
+    'width':'200px'
 },2000,function(){
-	$('span:first-child').animate({
-		'font-size':'12px'
-	},2000);
-});
-</script>
--->
-<!-- //////////////////////////////////////////////////////////////////// -->
-<!--
-<script type="text/javascript">
-// тут выделиться на первый взгляд больше элементов, чем нужно: параграф1, параграф3, родительский спан, дочерний спан,ссылка,свободный спан.
-// .Дело в том, что теги br тоже считаются, как дочерние элементы. (отсчёт тут начинается не с 0, а с 1)
-$('.code *:nth-child(odd)').animate({ 
-    'font-size':'24px'
-},2000,function(){
-	$('.code *:nth-child(odd)').animate({
-		'font-size':'12px'
-	},2000);
-});
-</script>
--->
-<!-- //////////////////////////////////////////////////////////////////// -->
-<!--
-<script type="text/javascript">
-// второй дочерний элемент — это ‘парагарф2′
-$('.code *:nth-child(2)').animate({ 
-    'font-size':'24px'
-},2000,function(){
-	$('.code *:nth-child(2)').animate({
-		'font-size':'12px'
-	},2000);
-});
-</script>
--->
-<!-- //////////////////////////////////////////////////////////////////// -->
-<!--
-<script type="text/javascript">
-// n — это 0,1,2,3 и т.п. Значит, мы отбираем 3,5,7,9 и т.п.
-$('.code *:nth-child(2n+3)').animate({ 
-    'font-size':'24px'
-},2000,function(){
-	$('.code *:nth-child(2n+3)').animate({
-		'font-size':'12px'
+	$(':submit').animate({
+		'width':'100px'
 	},2000);
 });
 </script>
@@ -163,12 +141,12 @@ $('.code *:nth-child(2n+3)').animate({
 <!-- //////////////////////////////////////////////////////////////////// -->
 
 <script type="text/javascript">
-// выделится один единственный ‘дочерний спан’
-$('.code *:only-child').animate({ 
-    'font-size':'24px'
+// вылеляться все активные элементы.
+$(':enabled').animate({ 
+    'width':'200px'
 },2000,function(){
-	$('.code *:only-child').animate({
-		'font-size':'12px'
+	$(':enabled').animate({
+		'width':'100px'
 	},2000);
 });
 </script>
