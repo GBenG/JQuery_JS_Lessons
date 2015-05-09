@@ -56,17 +56,19 @@
 
 		<form name="test" method="post" action="input1.php" class="code">
 			<p><b>Ваше имя:</b><br>
-				<input name="nick" type="text" size="40">
+				<input name="nick" type="text" size="40"/>
 			</p>
 			<p><b>Каким браузером в основном пользуетесь:</b><Br>
-				<input type="radio" name="browser" value="ie"> Internet Explorer<Br>
-				<input type="radio" name="browser" value="opera"> Opera<Br>
-				<input type="radio" name="browser" value="firefox"> Firefox<Br>
+				<input type="checkbox" name="browser" value="ie"/> Internet Explorer<Br>
+				<input type="checkbox" name="browser" value="opera"/> Opera<Br>
+				<input type="checkbox" name="browser" value="firefox"/> Firefox<Br>
 			</p>
 			<p>Комментарий<Br>
-				<textarea name="comment" cols="40" rows="3"></textarea></p>
-			<p><input type="submit" value="Отправить">
-				<input type="reset" value="Очистить">
+				<textarea name="comment" cols="40" rows="3"></textarea>
+			</p>
+			<p>
+				<input type="submit" value="Отправить"/>
+				<input type="reset" value="Очистить"/>
 			</p>
 		</form>
 
@@ -153,6 +155,25 @@ $('p').click(function(){
                     }
             else(alert('НЕТ тут такого класса'));
 });
+</script>
+
+<!-- //////////////////////////////////////////////////////////////////// -->
+
+<script type="text/javascript">
+// РАБОТА СО ЗНАЧЕНИЯМИ
+
+// В текстовом поле Input’a появятся буквы ‘xxx’
+$('input:text').val('xxx')
+
+// Тут уже фраза «отправить» заменится на «ххх»
+$('input:submit').val('xxx')
+
+// Выплывет слово «отправить»
+alert($('input:submit').val())
+
+// Данное выражение поставит галочки в checkbox’ах ie и opera
+$('input:checkbox').val(['ie','opera'])
+
 </script>
 
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
