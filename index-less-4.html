@@ -105,7 +105,7 @@
 
         <article>
             <h2>Article Title</h2>
-            <p>Duis in vestibulum sem. Cras euismod tincidunt dui, et scelerisque tellus condimentum vel.
+            <p  id='pup'>Duis in vestibulum sem. Cras euismod tincidunt dui, et scelerisque tellus condimentum vel.
             Maecenas et urna sit amet risus fermentum rhoncus nec porttitor ligula. Maecenas sit amet
             turpis enim, ut iaculis est. Duis feugiat, lacus id placerat porttitor, lorem augue gravida
             nisi, eu porta eros risus et lectus. Maecenas vestibulum nunc vel ipsum tincidunt sit amet
@@ -124,12 +124,45 @@
 </body>
 
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- Уроки http://naikom.ru/blog/archives/category/coding/jquery пояснения методов http://html5book.ru/metody-jquery/ -->
+<!-- Урок  http://naikom.ru/blog/archives/2248-->
 <!-- //////////////////////////////////////////////////////////////////// -->
 
 <script type="text/javascript">
-// ...
+// у body нет дочерних элементов на первом уровне вложенности(у нас там только div.code), так что ответ будет НЕТ ТАКОГО.
+//  Кстати, обратите внимание на знак вопроса — такая конструкция предлагает выбор — если ответ на вопрос будет да, то ‘ЕСТЬ такое’, если нет, то ‘НЕТ ТАКОГО’.
+alert($('body > *').is('span') ? 'ЕСТЬ такое' : 'НЕТ ТАКОГО');
 
+// Тут ответ будет ‘ЕСТЬ такое’
+alert($('body > *').is('div') ? 'ЕСТЬ такое' : 'НЕТ ТАКОГО');
+</script>
+
+<!-- //////////////////////////////////////////////////////////////////// -->
+<!--
+<script type="text/javascript">
+// Выбрали все параграфы, и затем отрезали с 1-го по 4-й включительно (поэтому на конце надо писать 5 — до 5-го).
+//$('p').slice(1,5).css('border','1px solid #f06eaa')
+
+// Тут идёт отсчёт с конца списка. Пишется сверху вниз. Данный код выбирает с первого по 3й элементы с конца, т.е. это параграф2, параграф3, параграф4
+$('p').slice(-4,-1).css('border','1px solid #f06eaa')
+
+// выбран параграф3
+$('p').eq(3).css('border','1px solid #f06eaa')
+
+// выделит div.block и все параграфы, кроме параграфа2, т.к. он содержит атрибут id, в значении которого есть сочетание mi.
+$('.code > *').not('p[id^=mi]').css('border','1px solid #f06eaa')
+</script>
+-->
+<!-- //////////////////////////////////////////////////////////////////// -->
+
+<script type="text/javascript">
+// На данном примере мы задали функцию — если у текущего элемента есть атрибут id — возвращаем true. 
+// Этой функции соответствует только параграф 2 и последний абзац
+$('p').filter(function(){
+         if(this.hasAttribute('id'))
+            return true;
+        else
+            return false;
+}).css('border','1px solid #f06eaa')
 </script>
 
 <!-- //////////////////////////////////////////////////////////////////// -->
